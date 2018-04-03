@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProductManagement.Models.OrderStatus>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<div class="wrapper-md">
+   
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @ViewBag.Message
+            Orders
+        </div>
+        
+        <div>
+            <table class="table" data-filtering="true" data-paging="true" data-paging-size="8" ui-jq="footable">
+                
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Order Time</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @if (@item.Orders.IsStored)
+                            {
+                                <td>
+                                    <i><strong> @item.Orders.Products.ProductName</strong></i>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @item.Orders.Products.ProductName
+                                </td>
+                            }
+                            <td>
+                                @item.Orders.OrderTime
+                            </td>
+                            <td>
+                                @item.Status
+                            </td>                                         
+                            <td>
+                                <a class="btn m-b-xs btn-sm btn-danger btn-addon" href="@Url.Action("CancelOrder", "Order", new {@id = item.OrderID, @class = "btn m-b-xs btn-sm btn-danger btn-addon"})">
+                                    <i class="fa fa-trash-o"></i>Cancel Order
+                                </a>
+                            </td>
+                        </tr>
+                        
+                    }
+                </tbody>
+            </table>
+        </div>
+        <a class="btn m-b-xs btn-sm btn-primary btn-addon" href="@Url.Action("StoreAllOrder", "Order", new {@class = "btn m-b-xs btn-sm btn-primary btn-addon"})">
+            <i class="fa fa-check-circle-o"></i>Store All Orders
+        </a>
+    </div>
+    
+</div>
+

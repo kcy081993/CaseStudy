@@ -1,0 +1,29 @@
+﻿@model ProductManagement.Models.Products
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Product Management</h1>
+</div>
+<div class="row wrapper-md">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Add Product</div>
+            <div class="panel-body">
+                @Html.Raw(ViewBag.Message)
+                @using (Html.BeginForm("Add", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" name="ProductName" required="required" class="form-control" placeholder="Product Name">
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

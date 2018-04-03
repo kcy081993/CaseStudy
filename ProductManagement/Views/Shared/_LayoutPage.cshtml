@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title>Product Management | @ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="~/Content/css/animate.css" type="text/css" />
+    <link href="~/Content/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/app.min.css" type="text/css" />
+
+
+</head>
+<body>
+    <div class="app app-header-fixed ">
+        <header id="header" class="app-header navbar" role="menu">
+            <div class="navbar-header bg-dark">
+                <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
+                    <i class="glyphicon glyphicon-cog"></i>
+                </button>
+                <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
+                    <i class="glyphicon glyphicon-align-justify"></i>
+                </button>
+                <a href="#" class="navbar-brand text-lt">
+                    <i class="fa fa-btc"></i>
+                    <img src="/Areas/Admin/Content/img/logo.png" alt="logo" class="hide">
+                    <span class="hidden-folded m-l-xs">| Panel</span>
+                </a>
+            </div>
+            <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+                <div class="nav navbar-nav hidden-xs">
+                    <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+                        <i class="fa fa-dedent fa-fw text"></i>
+                        <i class="fa fa-indent fa-fw text-active"></i>
+                    </a>
+                </div>
+                @*<ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+                            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                                <img src="/Areas/Admin/Content/img/admin.png" alt="admin">
+                                <i class="on md b-white bottom"></i>
+                            </span>
+                            <span class="hidden-sm hidden-md">Admin</span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight w">
+                            <li>
+                                <a href="@Url.Action("LogOff","Account")">LogOut</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>*@
+            </div>
+        </header>
+        <aside id="aside" class="app-aside hidden-xs bg-dark">
+            <div class="aside-wrap">
+                <div class="navi-wrap">
+                    <nav ui-nav class="navi clearfix">
+                        <ul class="nav">
+                            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                                <span>Navigation</span>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Home")" class="auto">
+                                    <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                    <span class="font-bold">Home</span>
+                                </a>
+                            </li>
+                            <li class="line dk"></li>
+                            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                                <span>Control Panel</span>
+                            </li>
+                            <li>
+                                <a href class="auto">
+                                    <span class="pull-right text-muted">
+                                        <i class="fa fa-fw fa-angle-right text"></i>
+                                        <i class="fa fa-fw fa-angle-down text-active"></i>
+                                    </span>
+                                    <i class="glyphicon glyphicon-th"></i>
+                                    <span>Products</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    <li>
+                                        <a href="@Url.Action("Index","Product")">
+                                            <i class="glyphicon glyphicon-list"></i>
+                                            <span>Product</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Add","Product")">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            <span>Add Product</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href class="auto">
+                                    <span class="pull-right text-muted">
+                                        <i class="fa fa-fw fa-angle-right text"></i>
+                                        <i class="fa fa-fw fa-angle-down text-active"></i>
+                                    </span>
+                                    <i class="glyphicon glyphicon-briefcase icon"></i>
+                                    <span>Order Management</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    <li>
+                                        <a href="@Url.Action("OrderProduct","Order")">
+                                            <i class="glyphicon glyphicon-list"></i>
+                                            <span>Orders</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href class="auto">
+                                    <span class="pull-right text-muted">
+                                        <i class="fa fa-fw fa-angle-right text"></i>
+                                        <i class="fa fa-fw fa-angle-down text-active"></i>
+                                    </span>
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                    <span>Stock Management</span>
+                                </a>
+                                <ul class="nav nav-sub dk">
+                                    <li>
+                                        <a href="@Url.Action("Index","Stock")">
+                                            <i class="glyphicon glyphicon-list"></i>
+                                            <span>Stock</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="line dk hidden-folded"></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <div id="content" class="app-content" role="main">
+            <div class="app-content-body ">
+                @RenderBody()
+            </div>
+        </div>
+        <footer id="footer" class="app-footer">
+            <div class="wrapper b-t bg-light">
+                <span class="pull-right">1.0.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+
+            </div>
+        </footer>
+    </div>
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/ui-load.js"></script>
+    <script src="~/Content/js/ui-jp.config.js"></script>
+    <script src="~/Content/js/ui-jp.js"></script>
+    <script src="~/Content/js/ui-nav.js"></script>
+    <script src="~/Content/js/ui-toggle.js"></script>
+    <script src="~/Content/js/ui-client.js"></script>
+
+</body>
+
+</html>

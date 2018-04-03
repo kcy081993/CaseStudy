@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ProductManagement.Models.OrderStatus>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Stock Management</h1>
+</div>
+
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Orders
+        </div>
+        <div>
+            <table class="table" data-filtering="true" data-paging="true" data-paging-size="8" ui-jq="footable">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Orders.Products.ProductName
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
